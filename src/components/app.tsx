@@ -1,6 +1,5 @@
 import React, { Component, CSSProperties } from 'react';
-import '../styles/main.css'
-import '../styles/theme.css'
+import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/animations.css'
 import '../styles/font_awesome/css/all.min.css'
 import '../styles/customization.css'
@@ -11,69 +10,57 @@ import { About } from './about'
 import { SlideIn } from './animations'
 import { Projects } from './projects';
 import { SkillList, Skill, Topic } from './skills';
-import { Navbar, NavbarItem, NavbarSubItem } from './navbar';
+import { Navbar, NavbarItem, NavbarDropDown, NavbarDropDownItem } from './navbar';
 import { PageSwitcher } from './pageswitcher';
 import { Page } from './page'
 
 type AppProps = {}
 type AppState = {
   currentpage: number,
-  subpage: null | number
 }
 export default class App extends Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props)
     this.state = {
-      currentpage: 0,
-      subpage: null
+      currentpage: 0
     }
   }
 
   public render() {
     return (
-      <div className="w3-content w3-margin-top" style={{ maxWidth: 1400 }}>
-        <div className="w3-row-padding">
-          <div className="w3-third">
+      <div className="container" style={{ maxWidth: 1400 }}>
+        <div className='row justify-content-center mb-3 mt-5'>
+          <h1>Robert van Diest</h1>
+        </div>
+        <div className="row justify-content-center mt-3 mb-3">
+          <Navbar>
+            <NavbarItem title='About me' onclick={() => { this.setState({ ...this.state, currentpage: 0 }) }} />
+            <NavbarItem title='My projects' onclick={() => { this.setState({ ...this.state, currentpage: 1 }) }} />
+            <NavbarItem title='Work Experience' onclick={() => { this.setState({ ...this.state, currentpage: 2 }) }} />
+            <NavbarItem title='Education' onclick={() => { this.setState({ ...this.state, currentpage: 3 }) }} />
+            <NavbarItem title='Skills' onclick={() => { this.setState({ ...this.state, currentpage: 4 }) }} />
+          </Navbar>
+        </div>
+        <div className="row">
+          <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
             <SlideIn from='left' duration='1400ms'>
               <Info />
             </SlideIn>
             <br />
           </div>
-          <div className="w3-twothird">
-            <Navbar>
-              <NavbarItem title='About me' onclick={() => { this.setState({ ...this.state, currentpage: 0, subpage: null }) }} />
-              <NavbarItem title='My projects' onclick={() => { this.setState({ ...this.state, currentpage: 1, subpage: 0 }) }}>
-                <NavbarSubItem title='CareKeeper' onclick={() => { this.setState({ ...this.state, currentpage: 1, subpage: 1 }) }} />
-                <NavbarSubItem title='Intervention' onclick={() => { this.setState({ ...this.state, currentpage: 1, subpage: 2 }) }} />
-              </NavbarItem>
-              <NavbarItem title='Work Experience' onclick={() => { this.setState({ ...this.state, currentpage: 2, subpage: null }) }} />
-              <NavbarItem title='Education' onclick={() => { this.setState({ ...this.state, currentpage: 3, subpage: null }) }} />
-              <NavbarItem title='Skills' onclick={() => { this.setState({ ...this.state, currentpage: 4, subpage: null }) }} />
-            </Navbar>
-            <PageSwitcher currentpage={this.state.currentpage} subpage={this.state.subpage}>
-              <Page id={0}>
+          <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+            <PageSwitcher currentpage={this.state.currentpage}>
+              <Page id={0} title={"About me"}>
                 <SlideIn from='right' duration='1s'>
                   <About />
                 </SlideIn>
               </Page>
-              <Page id={1}>
-                <Page id={0}>
-                  <SlideIn from='right' duration='1s'>
-                    <Projects />
-                  </SlideIn>
-                </Page>
-                <Page id={1}>
-                  <SlideIn from='right' duration='1s'>
-                    <Projects />
-                  </SlideIn>
-                </Page>
-                <Page id={2}>
-                  <SlideIn from='right' duration='1s'>
-                    <Projects />
-                  </SlideIn>
-                </Page>
+              <Page id={1} title={"My projects"}>
+                <SlideIn from='right' duration='1s'>
+                  <Projects />
+                </SlideIn>
               </Page>
-              <Page id={2}>
+              <Page id={2} title={"Work Experience"}>
                 <SlideIn from='right' duration='1s'>
                   <WorkExperienceList>
                     <WorkExperience function={"Stagiar"}
@@ -94,7 +81,7 @@ export default class App extends Component<AppProps, AppState> {
                   </WorkExperienceList>
                 </SlideIn>
               </Page>
-              <Page id={3}>
+              <Page id={3} title={"Education"}>
                 <SlideIn from='right' duration='1s'>
                   <EducationList>
                     <Education start={new Date('09-01-2017')}
@@ -110,7 +97,7 @@ export default class App extends Component<AppProps, AppState> {
                   </EducationList>
                 </SlideIn>
               </Page>
-              <Page id={4}>
+              <Page id={4} title={"Skills"}>
                 <SlideIn from='right' duration='1s'>
                   <SkillList>
                     <Skill level={85} name={"C#"}>
