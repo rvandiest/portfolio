@@ -22,7 +22,7 @@ export class Skill extends React.Component<SkillProps, SkillState>{
                 <h4><i className="fa fa-desktop fa-fw"></i><b> {this.props.name}</b></h4>
 
                 <div className="progress" style={{ height: '30px' }}>
-                    <div className="progress-bar" style={{ width: `${this.state.level}%`, backgroundColor: 'gray' }}>{this.state.level}%</div>
+                    <div className="progress-bar" style={{ width: `${this.state.level}%`, backgroundColor: 'gray' }}><h5>{this.state.level}%</h5></div>
                 </div>
                 <ul>
                     {this.props.children}
