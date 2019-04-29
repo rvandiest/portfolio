@@ -3,8 +3,17 @@ import React from "react";
 export class Navbar extends React.Component {
     public render() {
         return (
-            <div className="w3-bar w3-white w3-border w3-margin-bottom">
-                {this.props.children}
+            <div className='row'>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light w-100"  >
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav">
+                            {this.props.children}
+                        </ul>
+                    </div>
+                </nav>
             </div>
         )
     }
@@ -18,21 +27,35 @@ type NavbarItemProps = {
 export class NavbarItem extends React.Component<NavbarItemProps> {
     public render() {
         return (
-            <div className="w3-dropdown-hover">
-                <button onClick={() => this.props.onclick()} className="w3-button w3-white">{this.props.title}</button>
-                <div className="w3-dropdown-content w3-bar-block w3-border">
-                    {this.props.children}
-                </div>
-            </div>
+            <li className="nav-item" style={{ fontSize: '24px' }}>
+                <a style={{ color: 'grey' }} onClick={() => this.props.onclick()} className="nav-link">{this.props.title}</a>
+            </li>
         )
     }
 }
 
-export class NavbarSubItem extends React.Component<NavbarItemProps>{
+export class NavbarDropDown extends React.Component<NavbarItemProps> {
     public render() {
         return (
-            <button onClick={() => this.props.onclick()} className="w3-bar-item w3-button">{this.props.title}</button>
+            <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {this.props.title}
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    {this.props.children}
+                </div>
+            </li>
+
         )
     }
+}
+
+export class NavbarDropDownItem extends React.Component<NavbarItemProps> {
+    public render() {
+        return (
+            <a className="dropdown-item" onClick={() => { this.props.onclick() }}>{this.props.title}</a>
+        )
+    }
+
 }
 

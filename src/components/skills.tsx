@@ -1,5 +1,4 @@
 import React from "react";
-import { SlideIn } from "./animations";
 
 
 type SkillProps = {
@@ -18,16 +17,18 @@ export class Skill extends React.Component<SkillProps, SkillState>{
     }
     public render() {
         return (
-            <div>
-                <p><i className="fa fa-desktop fa-fw w3-margin-right w3-large w3-text-teal"></i><b>{this.props.name}</b></p>
-                <div className="w3-light-grey w3-round-xlarge w3-small">
-                    <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{ width: `${this.state.level}%` }}>{this.state.level}%</div>
+            <div className='col-12'>
+
+                <h4><i className="fa fa-desktop fa-fw"></i><b> {this.props.name}</b></h4>
+
+                <div className="progress" style={{ height: '30px' }}>
+                    <div className="progress-bar" style={{ width: `${this.state.level}%`, backgroundColor: 'gray' }}><h5>{this.state.level}%</h5></div>
                 </div>
-                <ul className='w3-ul'>
+                <ul>
                     {this.props.children}
                 </ul>
-                <br />
-            </div>
+                <hr />
+            </div >
         )
     }
 
@@ -39,7 +40,7 @@ export class Skill extends React.Component<SkillProps, SkillState>{
             else {
                 this.setState({ ...this.state, level: this.state.level + 1 })
             }
-        }, 30)
+        }, 40)
     }
 }
 
@@ -63,8 +64,7 @@ export class Topic extends React.Component<TopicProps> {
 export class SkillList extends React.Component {
     public render() {
         return (
-            <div className="w3-container w3-margin-top w3-card w3-white popup-from-bottom">
-                <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Skills</h2>
+            <div className="row mb-3 mt-3">
                 {this.props.children}
             </div>
         )

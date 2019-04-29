@@ -11,17 +11,17 @@ export type WorkExperienceProps = {
 export class WorkExperience extends React.Component<WorkExperienceProps>{
     public render() {
         let enddate;
-        if(this.props.end.getDate() >= new Date().getDate()){
+        if (this.props.end.getDate() >= new Date().getDate()) {
             enddate = <span className="w3-tag w3-teal w3-round">Currently</span>
         }
-        else{
+        else {
             enddate = <span>{this.props.end.toDateString()}</span>
         }
         return (
-            <div className="w3-container">
-                <h5 className="w3-opacity"><b>{this.props.function} / {this.props.company}</b></h5>
-                <h6 className="w3-text-teal">
-                <i className="fa fa-calendar fa-fw w3-margin-right"></i>{this.props.start.toDateString()} - {enddate}</h6>
+            <div className='col-12'>
+                <h5><b>{this.props.function} / {this.props.company}</b></h5>
+                <h6>
+                    <i className="fa fa-calendar fa-fw"></i>{this.props.start.toDateString()} - {enddate}</h6>
                 <p>{this.props.description}</p>
                 <hr />
             </div>
@@ -29,11 +29,10 @@ export class WorkExperience extends React.Component<WorkExperienceProps>{
     }
 }
 
-export class WorkExperienceList extends React.Component{
+export class WorkExperienceList extends React.Component {
     public render() {
         return (
-            <div className="w3-container w3-card w3-white w3-margin-bottom popup-from-right">
-                <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+            <div className="row mt-3 mb-3">
                 {this.props.children}
             </div>
         )

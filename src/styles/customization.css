@@ -1,8 +1,4 @@
-.fa{
-    color: rgb(100,100,100)!important;
-}
-
-.w3-teal, .w3-hover-teal:hover {
-    color: #fff!important;
-    background-color:rgb(120,120,120)!important;
+nav div ul li:hover {
+    cursor: pointer;
+    background: rgb(210, 210, 210)
 }
