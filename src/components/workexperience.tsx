@@ -11,7 +11,7 @@ export type WorkExperienceProps = {
 export class WorkExperience extends React.Component<WorkExperienceProps>{
     public render() {
         let enddate;
-        if (this.props.end.getDate() >= new Date().getDate()) {
+        if (this.props.end.getDate() == new Date().getDate()) {
             enddate = <span className="w3-tag w3-teal w3-round">Currently</span>
         }
         else {

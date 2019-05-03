@@ -8,13 +8,6 @@ import "../../node_modules/slick-carousel/slick/slick-theme.css";
 export class Info extends React.Component {
 
     public render() {
-        var settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };
         return (
             <div className="card">
                 <div id="carouselExampleIndicators" className="carousel slide card-img-top" data-ride="carousel">
