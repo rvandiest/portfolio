@@ -7,11 +7,18 @@ type EducationProps = {
     end: Date
     degree: string
     description: string
+    grade: number | null
 }
 export class Education extends React.Component<EducationProps>{
+
+    public static defaultProps = {
+        grade: null,
+        degree: null
+    };
+
     public render() {
         let enddate;
-        if (this.props.end.getDate() == new Date().getDate()) {
+        if (this.props.end > new Date() || this.props.end.getDate() === new Date().getDate()) {
             enddate = <span className="w3-tag w3-teal w3-round">Currently</span>
         }
         else {
@@ -20,11 +27,12 @@ export class Education extends React.Component<EducationProps>{
 
         return (
             <div className={"col-12"}>
-                <h5><b>{this.props.location}</b></h5>
+                <h5><b>{this.props.location}{this.props.degree ? `/${this.props.degree}` : null}</b></h5>
                 <h6>
                     <i className="fa fa-calendar fa-fw"></i>{this.props.start.toDateString()} - {enddate}
                 </h6>
                 <p>{this.props.description}</p>
+                {this.props.grade ? <p><i>(Average) grade: <b>{this.props.grade}</b></i></p> : null}
                 <hr className='w-100' />
             </div>
         )

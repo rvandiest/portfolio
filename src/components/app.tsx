@@ -1,8 +1,10 @@
+import '@fortawesome/fontawesome-free/js/all'
+import $ from 'jquery'
+import jQuery from 'jquery'
+import "bootstrap"
+import "bootstrap/scss/bootstrap.scss"
+
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import '../styles/animations.css'
-import '../styles/font_awesome/css/all.min.css'
-import '../styles/customization.css'
 import { WorkExperienceList, WorkExperience } from './workexperience'
 import { EducationList, Education } from './education'
 import { About } from './about'
@@ -14,6 +16,9 @@ import { Navbar, NavbarItem } from './navbar';
 import { PageSwitcher } from './pageswitcher';
 import { Page } from './page'
 import { Chatbox } from './chatbox';
+
+import '../styles/animations.css'
+import '../styles/customization.css'
 
 type AppProps = {}
 type AppState = {
@@ -64,20 +69,28 @@ export default class App extends Component<AppProps, AppState> {
             <Page id={3} title={"Work Experience"}>
               <SlideIn from='right' duration='1s'>
                 <WorkExperienceList>
-                  <WorkExperience function={"Intern"}
-                    company={"Sping BV"}
-                    start={new Date('09-03-2018')}
-                    end={new Date('02-15-2019')}
-                    description={"Software engineering intern. During this period I've gained experience with chatbots (Google Dialogflow), NodeJS and ReactJS."} />
+                  <WorkExperience function={"Junior fullstack developer"}
+                    company={"Rodium BV"}
+                    start={new Date('05-22-2019')}
+                    end={new Date('12-22-2019')}
+                    description={`Rodium BV gave me the chance to work part time (10 hours a week) on their Human Resource Management 
+                    product called Fit-To-Position. 
+                    Here I've gained (more) backend development experience using PHP7 and the Laravel Framework, 
+                    and also did some work on the front-end using ES8 and SASS.`} />
                   <WorkExperience function={"Sales employee"}
                     company={"Verduijn Cichlids"}
                     start={new Date('01-03-2015')}
                     end={new Date()}
                     description={"Sidejob. Retail of tropical fish and products."} />
+                  <WorkExperience function={"Intern"}
+                    company={"Sping BV"}
+                    start={new Date('09-03-2018')}
+                    end={new Date('02-15-2019')}
+                    description={"Software engineering intern. During this period I've gained experience with chatbots (Google Dialogflow), NodeJS and ReactJS."} />
                   <WorkExperience function={"Postal Delivery"}
                     company={"SANDD Postverspreiders BV"}
-                    start={new Date('03-01-2015')}
-                    end={new Date('08-01-2015')}
+                    start={new Date('03-01-2014')}
+                    end={new Date('08-01-2014')}
                     description={"Sidejob. Sorting mail and delivering."} />
                 </WorkExperienceList>
               </SlideIn>
@@ -85,40 +98,59 @@ export default class App extends Component<AppProps, AppState> {
             <Page id={4} title={"Education"}>
               <SlideIn from='right' duration='1s'>
                 <EducationList>
-                  <Education start={new Date('09-01-2017')}
+                  <Education start={new Date('09-04-2017')}
                     end={new Date()}
                     location={"Hogeschool Rotterdam"}
                     degree={"Bachelor of Science"}
                     description={"Main phase bachelor Informatica"} />
-                  <Education start={new Date('09-01-2016')}
-                    end={new Date('07-13-2017')}
+                  <Education start={new Date('09-02-2019')}
+                    end={new Date()}
                     location={"Hogeschool Rotterdam"}
-                    degree={"Bachelor of Science"}
-                    description={"Propedeuse bachelor Informatica"} />
+                    degree={"Minor"}
+                    description={"Minor IT Innovatie voor Defensie & Veiligheid"} />
+                  <Education start={new Date('02-25-2019')}
+                    end={new Date('07-22-2019')}
+                    location={"Hogeschool Rotterdam"}
+                    degree={"Minor"}
+                    description={"Minor Data Engineering"} 
+                    grade={7.3} />
+                  <Education start={new Date('08-29-2016')}
+                    end={new Date('07-14-2017')}
+                    location={"Hogeschool Rotterdam"}
+                    degree={"Bachelor propedeuse"}
+                    description={"Propedeuse bachelor Informatica"}
+                    grade={8.5} />
                 </EducationList>
               </SlideIn>
             </Page>
             <Page id={5} title={"Skills"}>
               <SlideIn from='right' duration='1s'>
                 <SkillList>
-                  <Skill level={85} name={"C#"}>
+                  <Skill level={75} name={"C#"}>
                     <Topic name='ASP.NET' />
                     <Topic name='.NET Core 2' />
                     <Topic name='ASP.NET Core MVC' />
+                    <Topic name='Unity' />
+                    <Topic name='Xamarin' />
                   </Skill>
                   <Skill level={80} name={"Python 3.6"}>
                     <Topic name='Django' />
                     <Topic name='Flask' />
+                    <Topic name='Airflow' />
                   </Skill>
-                  <Skill level={80} name={"Java"}>
+                  <Skill level={60} name={"Java"}>
                     <Topic name='JavaFX' />
-                    <Topic name='Hibernate' />
                     <Topic name='Swing' />
                   </Skill>
-                  <Skill level={80} name={"JavaScript"}>
+                  <Skill level={85} name={"JavaScript"}>
                     <Topic name='TypeScript' />
                     <Topic name='ReactJS' />
                     <Topic name='VueJS' />
+                    <Topic name='NodeJS' />
+                  </Skill>
+                  <Skill level={80} name={"PHP"}>
+                    <Topic name='PHP7' />
+                    <Topic name='Laravel' />
                   </Skill>
                 </SkillList>
               </SlideIn>

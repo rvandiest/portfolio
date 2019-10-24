@@ -5,10 +5,13 @@ export class About extends React.Component {
         return (
             <div>
                 <div className={"mt-1"} style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
-                    <p>
-                        Decisive, compassionate and loyal are three terms to describe me.
-                        I'm most productive in a vibe where everyone feels valued and essential.
-                        not afraid to speak my mind and suggest improvements or ideas.
+                    <p>{
+                        `Welcome to my digital portfolio and resume! I'm Robert van Diest, a 
+                        ${Math.floor(Math.abs((+new Date('08-23-1995')-+new Date()))/31536000000)} year old programmer. 
+                        I have experience in both back- and frontend, but my talents and passion lie closer to backend development.
+
+                         Browse this site to see some projects I've worked on in the past, dig up information about my
+                         (previous) employers, or just to learn more about me :)`}
                     </p>
                 </div>
                 <div className={"mt-5 col-xs-12 col-sm-12 offset-md-2 col-md-8 col-lg-8"}>
