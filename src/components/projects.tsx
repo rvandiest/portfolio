@@ -48,7 +48,7 @@ export class Projects extends React.Component {
                                     <div className="carousel-caption d-none d-md-block">
                                         <h5>Enclosure Details</h5>
                                         <p>In the Enclosure details page, you can see the animals currently in this enclosure,
-                                            and the actions performed on the enclosure or its' inhabitants.
+                                        and the actions performed on the enclosure or its' inhabitants.
                                         </p>
                                     </div>
                                 </div>
@@ -112,6 +112,27 @@ export class Projects extends React.Component {
                         </p>
                         <p className="mt-1" style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
                             <i>This project was realised in Django.</i>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+                <div className="row">
+                    <h4 style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>VR Military Simulator</h4>
+                    <div className="mt-3 col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/O6odZDR-G7k" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </div>
+                    <div className="mt-3 col-xs-12 col-sm-12 col-md-12col-lg-12">
+                        <p className="mt-1" style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
+                            <b>Status: </b><i>Delivered POC</i>
+                        </p>
+                        <p className="mt-1" style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
+                            For the minor of my bachelor at the Hogeschool Rotterdam, our project group realised a proof of concept Virtual Reality trainer for the Dutch Armed Forces. 
+                            In this serious game, a squad leader can give orders to his (non playable AI) teammates using voice- and gesture commands.
+
+                            This project will be used in the effort of the Dutch Armed Forces in revolutionizing their way of training their forces.
+                        </p>
+                        <p className="mt-1" style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
+                            <i>This project was realised with the Unity engine, using the OpenVR library and HTC Vive.</i>
                         </p>
                     </div>
                 </div>

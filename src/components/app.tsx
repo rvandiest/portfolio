@@ -69,6 +69,14 @@ export default class App extends Component<AppProps, AppState> {
             <Page id={3} title={"Work Experience"}>
               <SlideIn from='right' duration='1s'>
                 <WorkExperienceList>
+                  <WorkExperience function={"Graduation intern"}
+                    company={"OVSoftware BV"}
+                    start={new Date('02-10-2020')}
+                    end={new Date('07-14-2020')}
+                    description={`At OVSoftware BV I completed my graduation internship. Research was a big component of this internship: I've researched
+                    how to store resume data of IT-Professionals in a way that can be easily searched and give insight in the key skills of these professionals.
+                    After the research I've implemented my findings in a application that combines a ASP.NET Core backend with an Angular frontend, and uses Elasticsearch as a search component.`}
+                    reference={'Sylvia Straub'} />
                   <WorkExperience function={"Junior fullstack developer"}
                     company={"Rodium BV"}
                     start={new Date('05-22-2019')}
@@ -76,17 +84,20 @@ export default class App extends Component<AppProps, AppState> {
                     description={`Rodium BV gave me the chance to work part time (10 hours a week) on their Human Resource Management 
                     product called Fit-To-Position. 
                     Here I've gained (more) backend development experience using PHP7 and the Laravel Framework, 
-                    and also did some work on the front-end using ES8 and SASS.`} />
+                    and also did some work on the front-end using ES8 and SASS.`}
+                    reference={'Maurice Uijlenbroek'} />
                   <WorkExperience function={"Sales employee"}
                     company={"Verduijn Cichlids"}
                     start={new Date('01-03-2015')}
-                    end={new Date()}
-                    description={"Sidejob. Retail of tropical fish and products."} />
+                    end={new Date('02-08-2020')}
+                    description={"Sidejob. Retail of tropical fish and products."}
+                    reference={'Catharina Verduijn'} />
                   <WorkExperience function={"Intern"}
                     company={"Sping BV"}
                     start={new Date('09-03-2018')}
                     end={new Date('02-15-2019')}
-                    description={"Software engineering intern. During this period I've gained experience with chatbots (Google Dialogflow), NodeJS and ReactJS."} />
+                    description={"Software engineering intern. During this period I've gained experience with chatbots (Google Dialogflow), NodeJS and ReactJS."}
+                    reference={'Tom van de Geer'} />
                   <WorkExperience function={"Postal Delivery"}
                     company={"SANDD Postverspreiders BV"}
                     start={new Date('03-01-2014')}
@@ -99,20 +110,21 @@ export default class App extends Component<AppProps, AppState> {
               <SlideIn from='right' duration='1s'>
                 <EducationList>
                   <Education start={new Date('09-04-2017')}
-                    end={new Date()}
+                    end={new Date('07-14-2020')}
                     location={"Hogeschool Rotterdam"}
                     degree={"Bachelor of Science"}
                     description={"Main phase bachelor Informatica"} />
                   <Education start={new Date('09-02-2019')}
-                    end={new Date()}
+                    end={new Date('02-07-2020')}
                     location={"Hogeschool Rotterdam"}
                     degree={"Minor"}
-                    description={"Minor IT Innovatie voor Defensie & Veiligheid"} />
+                    description={"Minor IT Innovatie voor Defensie & Veiligheid"}
+                    grade={8.5} />
                   <Education start={new Date('02-25-2019')}
                     end={new Date('07-22-2019')}
                     location={"Hogeschool Rotterdam"}
                     degree={"Minor"}
-                    description={"Minor Data Engineering"} 
+                    description={"Minor Data Engineering"}
                     grade={7.3} />
                   <Education start={new Date('08-29-2016')}
                     end={new Date('07-14-2017')}
@@ -126,14 +138,32 @@ export default class App extends Component<AppProps, AppState> {
             <Page id={5} title={"Skills"}>
               <SlideIn from='right' duration='1s'>
                 <SkillList>
-                  <Skill level={75} name={"C#"}>
+                  <Skill level={85} name={"C#"}>
                     <Topic name='ASP.NET' />
-                    <Topic name='.NET Core 2' />
+                    <Topic name='.NET Core' />
                     <Topic name='ASP.NET Core MVC' />
                     <Topic name='Unity' />
                     <Topic name='Xamarin' />
+                    <Topic name='Entity Framework Core' />
                   </Skill>
-                  <Skill level={80} name={"Python 3.6"}>
+                  <Skill level={85} name={"JavaScript"}>
+                    <Topic name='ES8' />
+                    <Topic name='TypeScript' />
+                    <Topic name='ReactJS' />
+                    <Topic name='Angular' />
+                    <Topic name='VueJS' />
+                    <Topic name='NodeJS' />
+                  </Skill>
+                  <Skill level={75} name={"SQL"}>
+                    <Topic name='Postgresql' />
+                    <Topic name='Oracle MySql' />
+                  </Skill>
+                  <Skill level={75} name={"NO-SQL"}>
+                    <Topic name='MongoDB' />
+                    <Topic name='Neo4J' />
+                    <Topic name='Elasticsearch' />
+                  </Skill>
+                  <Skill level={75} name={"Python 3.6"}>
                     <Topic name='Django' />
                     <Topic name='Flask' />
                     <Topic name='Airflow' />
@@ -142,13 +172,7 @@ export default class App extends Component<AppProps, AppState> {
                     <Topic name='JavaFX' />
                     <Topic name='Swing' />
                   </Skill>
-                  <Skill level={85} name={"JavaScript"}>
-                    <Topic name='TypeScript' />
-                    <Topic name='ReactJS' />
-                    <Topic name='VueJS' />
-                    <Topic name='NodeJS' />
-                  </Skill>
-                  <Skill level={80} name={"PHP"}>
+                  <Skill level={60} name={"PHP"}>
                     <Topic name='PHP7' />
                     <Topic name='Laravel' />
                   </Skill>

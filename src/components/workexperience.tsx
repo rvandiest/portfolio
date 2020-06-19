@@ -5,13 +5,14 @@ export type WorkExperienceProps = {
     company: string
     start: Date
     end: Date
+    reference?: string
     description: string
 }
 
 export class WorkExperience extends React.Component<WorkExperienceProps>{
     public render() {
         let enddate;
-        if (this.props.end > new Date() || this.props.end.getDate()===new Date().getDate()) {
+        if (this.props.end > new Date() || this.props.end.getDate() === new Date().getDate()) {
             enddate = <span className="w3-tag w3-teal w3-round">Currently</span>
         }
         else {
@@ -23,6 +24,7 @@ export class WorkExperience extends React.Component<WorkExperienceProps>{
                 <h6>
                     <i className="fa fa-calendar fa-fw"></i>{this.props.start.toDateString()} - {enddate}</h6>
                 <p>{this.props.description}</p>
+                <p className="mt-1"><i>{this.props.reference ? `Reference: ${this.props.reference}`: ''}</i></p>
                 <hr />
             </div>
         )
